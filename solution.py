@@ -14,6 +14,6 @@ def solution(x_success: int,
     alpha = 0.02
     count = np.array([x_success, y_success])
     nobs = np.array([x_cnt, y_cnt])
-    stat, pval = proportions_ztest(count, nobs, alternative='smaller')
+    stat, pval = proportions_ztest(count, nobs, alternative='larger')
     result = pval < alpha
     return result
