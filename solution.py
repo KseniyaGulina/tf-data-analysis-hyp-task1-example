@@ -11,4 +11,8 @@ def solution(x_success: int,
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    count = np.array([x_success, y_success])
+    nobs = np.array([x_cnt, y_cnt])
+    stat, pval = proportions_ztest(count, nobs, alternative='smaller')
+    result = pval < 0.02
+    return result
